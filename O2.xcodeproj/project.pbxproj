@@ -14,6 +14,8 @@
 		4AB8A36C28D7B8C10006C893 /* O2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8A36B28D7B8C10006C893 /* O2Tests.swift */; };
 		4AB8A37628D7B8C10006C893 /* O2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8A37528D7B8C10006C893 /* O2UITests.swift */; };
 		4AB8A37828D7B8C10006C893 /* O2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8A37728D7B8C10006C893 /* O2UITestsLaunchTests.swift */; };
+		4AB8A38528D7B8DA0006C893 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8A38428D7B8DA0006C893 /* SplashScreen.swift */; };
+		4AB8A38928D7E6CB0006C893 /* WorkoutListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8A38828D7E6CB0006C893 /* WorkoutListScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4AB8A37128D7B8C10006C893 /* O2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = O2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB8A37528D7B8C10006C893 /* O2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = O2UITests.swift; sourceTree = "<group>"; };
 		4AB8A37728D7B8C10006C893 /* O2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = O2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4AB8A38428D7B8DA0006C893 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		4AB8A38828D7E6CB0006C893 /* WorkoutListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				4AB8A35A28D7B8C00006C893 /* O2App.swift */,
-				4AB8A35C28D7B8C00006C893 /* ContentView.swift */,
+				4AB8A38628D7BF730006C893 /* Views */,
 				4AB8A35E28D7B8C10006C893 /* Assets.xcassets */,
 				4AB8A36028D7B8C10006C893 /* Preview Content */,
 			);
@@ -125,6 +129,24 @@
 				4AB8A37728D7B8C10006C893 /* O2UITestsLaunchTests.swift */,
 			);
 			path = O2UITests;
+			sourceTree = "<group>";
+		};
+		4AB8A38628D7BF730006C893 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AB8A35C28D7B8C00006C893 /* ContentView.swift */,
+				4AB8A38728D7BF7B0006C893 /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4AB8A38728D7BF7B0006C893 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4AB8A38428D7B8DA0006C893 /* SplashScreen.swift */,
+				4AB8A38828D7E6CB0006C893 /* WorkoutListScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB8A38528D7B8DA0006C893 /* SplashScreen.swift in Sources */,
+				4AB8A38928D7E6CB0006C893 /* WorkoutListScreen.swift in Sources */,
 				4AB8A35D28D7B8C00006C893 /* ContentView.swift in Sources */,
 				4AB8A35B28D7B8C00006C893 /* O2App.swift in Sources */,
 			);
