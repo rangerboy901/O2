@@ -26,7 +26,7 @@ struct ButtonView: View {
                 Circle()
                     .fill(Color("blue"))
                     .frame(width: 60, height: 60, alignment: .center)
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 30)
                 
                 Button(action: {
                     isPresented=true
@@ -36,7 +36,7 @@ struct ButtonView: View {
                         .scaledToFit()
                         .foregroundColor(Color("white"))
                         .frame(width: 28, height: 28, alignment: .center)
-                        .padding(.trailing, 36)
+                        .padding(.trailing, 46)
                         .padding(.bottom, 15)
                     
                 } //: BUTTON
