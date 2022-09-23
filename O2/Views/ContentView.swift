@@ -2,14 +2,14 @@
 //  ContentView.swift
 //  O2
 //
-//  Created by Joseph Wil;liam DeWeese on 9/18/22.
+//  Created by Joseph William DeWeese on 9/18/22.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       SplashScreen()
+       WorkoutListScreen()
     }
 }
 
