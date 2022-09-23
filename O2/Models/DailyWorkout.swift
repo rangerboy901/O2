@@ -51,7 +51,7 @@ extension DailyWorkout {
 }
 extension DailyWorkout {
     struct Data {
-        dynamic var title: String = ""
+        var title: String = ""
         dynamic var objective: String = ""
         dynamic var type: String = ""
         dynamic var timeGoal: Double = 47.0

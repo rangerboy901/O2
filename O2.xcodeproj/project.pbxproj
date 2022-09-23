@@ -22,7 +22,6 @@
 		4AE5EE8128DD257F0002FCFB /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8028DD257F0002FCFB /* History.swift */; };
 		4AE5EE8328DD26820002FCFB /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8228DD26820002FCFB /* Clock.swift */; };
 		4AE5EE8528DD26E40002FCFB /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8428DD26E40002FCFB /* HapticManager.swift */; };
-		4AE5EE8728DD29460002FCFB /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8628DD29460002FCFB /* ButtonView.swift */; };
 		4AE5EE8928DD29710002FCFB /* WorkoutEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8828DD29710002FCFB /* WorkoutEditScreen.swift */; };
 		4AE5EE8B28DD299A0002FCFB /* WorkoutDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8A28DD299A0002FCFB /* WorkoutDetailScreen.swift */; };
 		4AE5EE8D28DD29AF0002FCFB /* WorkoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8C28DD29AF0002FCFB /* WorkoutCellView.swift */; };
@@ -65,7 +64,6 @@
 		4AE5EE8028DD257F0002FCFB /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		4AE5EE8228DD26820002FCFB /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		4AE5EE8428DD26E40002FCFB /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
-		4AE5EE8628DD29460002FCFB /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		4AE5EE8828DD29710002FCFB /* WorkoutEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEditScreen.swift; sourceTree = "<group>"; };
 		4AE5EE8A28DD299A0002FCFB /* WorkoutDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailScreen.swift; sourceTree = "<group>"; };
 		4AE5EE8C28DD29AF0002FCFB /* WorkoutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellView.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			children = (
 				4AB8A35C28D7B8C00006C893 /* ContentView.swift */,
 				4AB8A38728D7BF7B0006C893 /* Screens */,
-				4AE5EE8628DD29460002FCFB /* ButtonView.swift */,
 				4AE5EE8E28DD2D160002FCFB /* TimerView.swift */,
 				4AE5EE9028DD2D3D0002FCFB /* HistoryView.swift */,
 			);
@@ -351,7 +348,6 @@
 				4AE5EE7928DD24030002FCFB /* DailyWorkout.swift in Sources */,
 				4AB8A35D28D7B8C00006C893 /* ContentView.swift in Sources */,
 				4AB8A35B28D7B8C00006C893 /* O2App.swift in Sources */,
-				4AE5EE8728DD29460002FCFB /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

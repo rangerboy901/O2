@@ -11,17 +11,13 @@ import RealmSwift
 
 
 struct WorkoutListScreen: View {
-    
-    @Binding var workouts: [DailyWorkout]
+    //PROPERTIES
+    @ObservedResults(DailyWorkout.self) var workouts
+    @State private var isPresented = false
     @State private var newWorkoutData = DailyWorkout.Data()
-    @State private var showingEditWorkoutView: Bool = false
-    @State private var showingMenuView: Bool = false
     @State private var currentWorkout = DailyWorkout()
-    @State  var isPresented = false
-    let workout = DailyWorkout()
-    let saveAction: () -> Void
     
-    
+    ///Color theme for application.  Color relates to workout type.
     func colorize(type: String) -> Color {
         switch type {
         case "HIIT":
@@ -42,32 +38,70 @@ struct WorkoutListScreen: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            NavigationView{
-                        List {
-                            if let workouts = workouts {
-                                ForEach(workouts) { workout in
-                                    NavigationLink(
-                                        destination: WorkoutDetailScreen(workout: workout)) {
-                                            WorkoutCellView(workout: workout)
-                                        }
-                                }//TODO   delete row
-                            }
-                        }///#endOfList
-                      
-                  
+            
+                List {
+                    if let workouts = workouts {
+                        ForEach(workouts) { workout in
+                            NavigationLink(
+                                destination: WorkoutDetailScreen(workout: workout)) {
+                                    WorkoutCellView(workout: workout)
+                                }
+                                .listRowBackground(Color(uiColor: .secondarySystemGroupedBackground))
+                        }//TODO   delete row
+                        
+                    }
+                    
+                }///#endOfList
+                .navigationTitle("Workouts")
+
+            Group {
+               
+                    Circle()
+                        .fill(Color("blue"))
+                        .frame(width: 60, height: 60, alignment: .center)
+                        .padding(.trailing, 30)
+                    
+                    Button(action: {
+                        isPresented=true
+                    }) {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color("white"))
+                            .frame(width: 28, height: 28, alignment: .center)
+                            .padding(.trailing, 46)
+                            .padding(.bottom, 15)
+                        
+                    } //: BUTTON
+                }
                 
-                
-            }///#endOfNavigationtack
-            .navigationTitle("Workouts")
-            ButtonView()
-        }
+            .sheet(isPresented: $isPresented) {
+                NavigationView {
+                    WorkoutEditScreen()
+                        .navigationBarItems(leading: Button("Dismiss") {
+                            isPresented = false
+                        }, trailing: Button("Add") {
+                            let newWorkout = DailyWorkout(
+                                title: newWorkoutData.title,
+                                objective: newWorkoutData.objective,
+                                timeGoal: Int(newWorkoutData.timeGoal), type: newWorkoutData.type,exercises: newWorkoutData.exercises)
+                                $workouts.append(newWorkout)
+                            isPresented = false
+                        })
+                }
             }
         }
+    }
+            }
+           
+           
     
+    
+
 struct WorkoutsListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutListScreen(workouts: .constant(DailyWorkout.data), saveAction: {})
+            WorkoutListScreen()
         }
     }
 }

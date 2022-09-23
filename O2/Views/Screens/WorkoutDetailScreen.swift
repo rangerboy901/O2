@@ -140,7 +140,7 @@ struct WorkoutDetailScreen: View {
         .listStyle(InsetGroupedListStyle())
        
         .fullScreenCover(isPresented: $isPresented) {
-            NavigationView {
+            
                 WorkoutEditScreen()
                     
                     .navigationBarItems(leading: Button("Cancel") {
@@ -168,4 +168,4 @@ struct WorkoutDetailScreen: View {
     }
 
 
-}
+

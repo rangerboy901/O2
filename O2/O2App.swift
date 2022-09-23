@@ -8,13 +8,11 @@
 import SwiftUI
 
 @main
-struct O2App: App {
+struct ScrumdingerApp: App {
     var body: some Scene {
         WindowGroup {
-            let _ = UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-            let _ = print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path())
-            NavigationView{
-              SplashScreen()
+            NavigationView {
+                SplashScreen( workout: DailyWorkout())
             }
         }
     }

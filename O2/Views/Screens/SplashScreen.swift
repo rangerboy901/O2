@@ -11,12 +11,12 @@ struct SplashScreen: View {
     ///PROPERTIES
     @State var animationValues: [Bool] = Array(repeating: false, count: 10)
     @State var isPresented: Bool = false
-    let workout = DailyWorkout()
+    let workout: DailyWorkout
     var body: some View {
         
         ZStack{
             
-            WorkoutListScreen(workouts: .constant(DailyWorkout.data), saveAction: {})
+            WorkoutListScreen()
             
             if !animationValues[7] {
                 ///SPLASH SCREEN
@@ -125,6 +125,6 @@ struct SplashScreen: View {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        SplashScreen( workout: DailyWorkout())
     }
 }
