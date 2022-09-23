@@ -12,13 +12,16 @@ import RealmSwift
 
 struct WorkoutListScreen: View {
     
-    @ObservedResults(DailyWorkout.self) var workouts
+    @Binding var workouts: [DailyWorkout]
     @State private var newWorkoutData = DailyWorkout.Data()
     @State private var showingEditWorkoutView: Bool = false
     @State private var showingMenuView: Bool = false
     @State private var currentWorkout = DailyWorkout()
     @State  var isPresented = false
     let workout = DailyWorkout()
+    let saveAction: () -> Void
+    
+    
     func colorize(type: String) -> Color {
         switch type {
         case "HIIT":
@@ -64,7 +67,7 @@ struct WorkoutListScreen: View {
 struct WorkoutsListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutListScreen()
+            WorkoutListScreen(workouts: .constant(DailyWorkout.data), saveAction: {})
         }
     }
 }
