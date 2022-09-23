@@ -16,8 +16,84 @@ struct WorkoutListScreen: View {
     @State private var isPresented = false
     @State private var newWorkoutData = DailyWorkout.Data()
     @State private var currentWorkout = DailyWorkout()
+    @State private var showingSettingsView: Bool = false
+    @State private var showingWorkoutEditScreen: Bool = false
     
-    ///Color theme for application.  Color relates to workout type.
+    
+    var body: some View {
+        ZStack(alignment: .center) {
+            
+            List {
+                if let workouts = workouts {
+                    ForEach(workouts) { workout in
+                        NavigationLink(
+                            destination: WorkoutDetailScreen(workout: workout)) {
+                                WorkoutCellView(workout: workout)
+                            }
+                            .listRowBackground(Color(uiColor: .secondarySystemGroupedBackground))
+                    }//TODO   delete row
+                    
+                }
+                
+            }///#endOfList
+            .navigationTitle("Workouts")
+            .navigationBarItems(
+                leading: EditButton().accentColor(.primary),
+                trailing:
+                    Button(action: {
+                        self.showingSettingsView.toggle()
+                    }) {
+                        Image(systemName: "paintbrush")
+                            .imageScale(.large)
+                    } //: SETTINGS BUTTON
+                    .accentColor(.primary)
+                    .sheet(isPresented: $showingSettingsView) {
+                        SettingsView()
+                    }
+            )
+            if workouts.count == 0 {
+                EmptyListView()
+            }
+        }
+        .sheet(isPresented: $showingWorkoutEditScreen) {
+            WorkoutEditScreen()
+        }
+        .overlay(
+            ZStack {
+                Group {
+                    Circle()
+                        .fill(Color("white"))
+                        .frame(width: 72, height: 72, alignment: .center)
+                    Circle()
+                        .fill(Color("grey"))
+                        .frame(width: 70, height: 70, alignment: .center)
+                    Circle()
+                        .fill(Color("blue"))
+                        .frame(width: 65, height: 65, alignment: .center)
+                }
+                Button(action: {
+                    self.showingWorkoutEditScreen.toggle()
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .background(Circle().fill(Color("ColorBase")))
+                        .frame(width: 48, height: 48, alignment: .center)
+                } //: BUTTON
+                
+            } //: ZSTACK
+                .padding(.bottom, 15)
+                .padding(.trailing, 15)
+            , alignment: .bottomTrailing
+        )
+        
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    // MARK: - FUNCTIONS
+    
+    
+    
     func colorize(type: String) -> Color {
         switch type {
         case "HIIT":
@@ -35,68 +111,8 @@ struct WorkoutListScreen: View {
             
         }
     }
-    
-    var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            
-                List {
-                    if let workouts = workouts {
-                        ForEach(workouts) { workout in
-                            NavigationLink(
-                                destination: WorkoutDetailScreen(workout: workout)) {
-                                    WorkoutCellView(workout: workout)
-                                }
-                                .listRowBackground(Color(uiColor: .secondarySystemGroupedBackground))
-                        }//TODO   delete row
-                        
-                    }
-                    
-                }///#endOfList
-                .navigationTitle("Workouts")
-
-            Group {
-               
-                    Circle()
-                        .fill(Color("blue"))
-                        .frame(width: 60, height: 60, alignment: .center)
-                        .padding(.trailing, 30)
-                    
-                    Button(action: {
-                        isPresented=true
-                    }) {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(Color("white"))
-                            .frame(width: 28, height: 28, alignment: .center)
-                            .padding(.trailing, 46)
-                            .padding(.bottom, 15)
-                        
-                    } //: BUTTON
-                }
-                
-            .sheet(isPresented: $isPresented) {
-                NavigationView {
-                    WorkoutEditScreen()
-                        .navigationBarItems(leading: Button("Dismiss") {
-                            isPresented = false
-                        }, trailing: Button("Add") {
-                            let newWorkout = DailyWorkout(
-                                title: newWorkoutData.title,
-                                objective: newWorkoutData.objective,
-                                timeGoal: Int(newWorkoutData.timeGoal), type: newWorkoutData.type,exercises: newWorkoutData.exercises)
-                                $workouts.append(newWorkout)
-                            isPresented = false
-                        })
-                }
-            }
-        }
-    }
-            }
-           
-           
-    
-    
+}
+  // MARK: - PREVIEW
 
 struct WorkoutsListView_Previews: PreviewProvider {
     static var previews: some View {

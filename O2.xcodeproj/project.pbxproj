@@ -27,6 +27,9 @@
 		4AE5EE8D28DD29AF0002FCFB /* WorkoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8C28DD29AF0002FCFB /* WorkoutCellView.swift */; };
 		4AE5EE8F28DD2D160002FCFB /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE8E28DD2D160002FCFB /* TimerView.swift */; };
 		4AE5EE9128DD2D3D0002FCFB /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE9028DD2D3D0002FCFB /* HistoryView.swift */; };
+		4AE5EE9328DE36080002FCFB /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE9228DE36080002FCFB /* EmptyListView.swift */; };
+		4AE5EE9528DE38110002FCFB /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE9428DE38110002FCFB /* ButtonView.swift */; };
+		4AE5EE9728DE75EF0002FCFB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5EE9628DE75EF0002FCFB /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		4AE5EE8C28DD29AF0002FCFB /* WorkoutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellView.swift; sourceTree = "<group>"; };
 		4AE5EE8E28DD2D160002FCFB /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4AE5EE9028DD2D3D0002FCFB /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		4AE5EE9228DE36080002FCFB /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		4AE5EE9428DE38110002FCFB /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		4AE5EE9628DE75EF0002FCFB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +166,13 @@
 		4AB8A38628D7BF730006C893 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4AB8A35C28D7B8C00006C893 /* ContentView.swift */,
-				4AB8A38728D7BF7B0006C893 /* Screens */,
 				4AE5EE8E28DD2D160002FCFB /* TimerView.swift */,
 				4AE5EE9028DD2D3D0002FCFB /* HistoryView.swift */,
+				4AE5EE9428DE38110002FCFB /* ButtonView.swift */,
+				4AE5EE8C28DD29AF0002FCFB /* WorkoutCellView.swift */,
+				4AB8A35C28D7B8C00006C893 /* ContentView.swift */,
+				4AB8A38728D7BF7B0006C893 /* Screens */,
+				4AE5EE9628DE75EF0002FCFB /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,7 +184,7 @@
 				4AB8A38828D7E6CB0006C893 /* WorkoutListScreen.swift */,
 				4AE5EE8828DD29710002FCFB /* WorkoutEditScreen.swift */,
 				4AE5EE8A28DD299A0002FCFB /* WorkoutDetailScreen.swift */,
-				4AE5EE8C28DD29AF0002FCFB /* WorkoutCellView.swift */,
+				4AE5EE9228DE36080002FCFB /* EmptyListView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -337,11 +346,14 @@
 			files = (
 				4AE5EE8128DD257F0002FCFB /* History.swift in Sources */,
 				4AE5EE8928DD29710002FCFB /* WorkoutEditScreen.swift in Sources */,
+				4AE5EE9528DE38110002FCFB /* ButtonView.swift in Sources */,
+				4AE5EE9328DE36080002FCFB /* EmptyListView.swift in Sources */,
 				4AB8A38528D7B8DA0006C893 /* SplashScreen.swift in Sources */,
 				4AE5EE8B28DD299A0002FCFB /* WorkoutDetailScreen.swift in Sources */,
 				4AE5EE8528DD26E40002FCFB /* HapticManager.swift in Sources */,
 				4AE5EE8F28DD2D160002FCFB /* TimerView.swift in Sources */,
 				4AB8A38928D7E6CB0006C893 /* WorkoutListScreen.swift in Sources */,
+				4AE5EE9728DE75EF0002FCFB /* SettingsView.swift in Sources */,
 				4AE5EE9128DD2D3D0002FCFB /* HistoryView.swift in Sources */,
 				4AE5EE8D28DD29AF0002FCFB /* WorkoutCellView.swift in Sources */,
 				4AE5EE8328DD26820002FCFB /* Clock.swift in Sources */,
