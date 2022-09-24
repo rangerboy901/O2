@@ -12,7 +12,7 @@ struct ScrumdingerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SplashScreen( workout: DailyWorkout())
+               ContentView()
             }
         }
     }

@@ -31,7 +31,6 @@ class DailyWorkout: Object, ObjectKeyIdentifiable {
         self.timeGoal = timeGoal
         self.type = type
         exerciseList.append(objectsIn: exercises)
-       
         for entry in history {
             self.historyList.insert(entry, at: 0)
         }
@@ -42,9 +41,9 @@ extension DailyWorkout {
     static var data: [DailyWorkout] {
         [
             DailyWorkout(title: "Dakota", objective: "Complete as Rx'd for time.", timeGoal: 58, type: "HIIT", exercises: ["Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
-            DailyWorkout(title: "Remington", objective: "Complete for Time, focusing on form.", timeGoal: 56, type: "Power", exercises: ["Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
-            DailyWorkout(title: "Montana", objective: "Complete for Time.", timeGoal: 57, type: "Strength", exercises:[ "Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
-            DailyWorkout(title: "Cooper", objective: "Complete for Time.", timeGoal: 43, type: "Cardio", exercises: ["Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
+            DailyWorkout(title: "Remington", objective: "Complete as Rx'd for time, focusing on form.", timeGoal: 56, type: "Power", exercises: ["Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
+            DailyWorkout(title: "Montana", objective: "Complete as Rx'd for time.", timeGoal: 57, type: "Strength", exercises:[ "Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
+            DailyWorkout(title: "Cooper", objective: "Complete as Rx'd for time.", timeGoal: 43, type: "Cardio", exercises: ["Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
             DailyWorkout(title: "Hayven", objective: "Steady and smoothe ", timeGoal: 60, type: "Recover", exercises: ["Run 1 Mile","100 Push-Ups", "100 Pull-ups", "100 Sit-ups"]),
         ]
     }
@@ -52,10 +51,10 @@ extension DailyWorkout {
 extension DailyWorkout {
     struct Data {
         var title: String = ""
-        dynamic var objective: String = ""
-        dynamic var type: String = ""
-        dynamic var timeGoal: Double = 47.0
-        dynamic var exercises: [String] = []
+        var objective: String = ""
+        var type: String = ""
+        var timeGoal: Double = 47.0
+        var exercises: [String] = []
        
     }
     var data: Data {

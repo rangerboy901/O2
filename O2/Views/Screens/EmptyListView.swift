@@ -16,22 +16,27 @@ struct EmptyListView: View {
         
         ZStack {
             VStack{
-                
-                Image("frog")
+              
+                Image("tribelogotransparent")
                     .renderingMode(.original)
                     .resizable()
                     .scaledToFit()
-                    .frame(minWidth: 256, idealWidth: 280, maxWidth: 360, minHeight: 256, idealHeight: 280, maxHeight: 360, alignment: .center)
-                
-               
+//                    .frame(maxWidth: 200, maxHeight: 110, alignment: .center)
+                Text("Developm3nts")
+                    .font(.system(size: 30, design: .serif))
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .opacity(0.7)
+                    .foregroundColor(.primary)
                 
             }
            
-             
+            ButtonView()
         }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color(white: 0.5))
+            .background(Color(white: 0.9))
         .edgesIgnoringSafeArea(.all)
+     
         }
 //        Group {
 //            

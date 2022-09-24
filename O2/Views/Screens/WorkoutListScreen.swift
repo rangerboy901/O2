@@ -21,6 +21,7 @@ struct WorkoutListScreen: View {
     
     
     var body: some View {
+        
         ZStack(alignment: .center) {
             
             List {
@@ -51,12 +52,10 @@ struct WorkoutListScreen: View {
                         SettingsView()
                     }
             )
-            if workouts.count == 0 {
-                EmptyListView()
-            }
+            
         }
         .sheet(isPresented: $showingWorkoutEditScreen) {
-            WorkoutEditScreen()
+            WorkoutEditScreen(workoutData: $newWorkoutData)
         }
         .overlay(
             ZStack {
@@ -72,23 +71,62 @@ struct WorkoutListScreen: View {
                         .frame(width: 65, height: 65, alignment: .center)
                 }
                 Button(action: {
-                    self.showingWorkoutEditScreen.toggle()
+                    isPresented = true
                 }) {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .scaledToFit()
-                        .background(Circle().fill(Color("ColorBase")))
+                        .background(Circle().fill(Color("blue")))
                         .frame(width: 48, height: 48, alignment: .center)
                 } //: BUTTON
                 
-            } //: ZSTACK
+                
+            }
                 .padding(.bottom, 15)
                 .padding(.trailing, 15)
-            , alignment: .bottomTrailing
-        )
+                , alignment: .bottomTrailing
+            )
         
-        .navigationViewStyle(StackNavigationViewStyle())
+        
+                .sheet(isPresented: $isPresented) {
+                    NavigationView {
+                        WorkoutEditScreen(workoutData: $newWorkoutData)
+                            .navigationBarItems(leading: Button("Dismiss") {
+                                isPresented = false
+                            }, trailing: Button("Save") {
+                                let newWorkout = DailyWorkout(
+                                    title: newWorkoutData.title,
+                                    objective: newWorkoutData.objective,
+                                    timeGoal: Int(newWorkoutData.timeGoal), type: newWorkoutData.type,
+                                    exercises: newWorkoutData.exercises)
+                                  
+                                $workouts.append(newWorkout)
+                                isPresented = false
+                            }
+                           
+                                                )
+
+                            
+
+                        
+                    }//: ZSTACK
+                    .navigationTitle("rtest")
+                    
+
+        
+       
+        
+            }
+               
+        }
+       
+        
+        
+        
     }
+
+     
+    
     
     // MARK: - FUNCTIONS
     
@@ -111,7 +149,7 @@ struct WorkoutListScreen: View {
             
         }
     }
-}
+
   // MARK: - PREVIEW
 
 struct WorkoutsListView_Previews: PreviewProvider {
